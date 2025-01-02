@@ -7,16 +7,16 @@ use App\Http\Controllers\UserController;
 use App\Http\Middleware\OnlyGuestMiddleware;
 use App\Http\Middleware\OnlyMemberMiddleware;
 
-Route::get('/', [HomeController::class, 'home']);
+// Route::get('/', [HomeController::class, 'home']);
 
 Route::controller(UserController::class)->group(function () {
-    Route::get('/login', 'login')->middleware(OnlyGuestMiddleware::class);
-    Route::post('/login', 'doLogin')->middleware(OnlyGuestMiddleware::class);
-    Route::post('/logout', 'doLogout')->middleware(OnlyMemberMiddleware::class);
+    Route::get('/login', 'login');
+    Route::post('/login', 'doLogin');
+    Route::post('/logout', 'doLogout');
 });
 
 Route::controller(TodoListController::class)
-    ->middleware(OnlyMemberMiddleware::class)
+    ->middleware('onlyMember')
     ->group(function () {
         Route::get('/', 'index');
         Route::post('/', 'store');

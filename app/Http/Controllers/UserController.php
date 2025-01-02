@@ -34,6 +34,7 @@ class UserController extends Controller
 
         if ($this->userService->login($user, $pass)) {
             $request->session()->put('user', $user);
+            $request->session()->regenerate();
             return redirect('/');
         }
 
@@ -41,7 +42,7 @@ class UserController extends Controller
     }
 
     public function doLogout(Request $request) {
-        $request->session()->forget('user');
+        request()->session()->forget('user');
         return redirect('/login');
     }
 }

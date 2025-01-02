@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function home(Request $request) {
-        if($request->session()->exists('user')) {
-            return redirect('/');
-        } else {
-            return redirect('/login');
-        }
+        // if($request->session()->exists('user')) {
+        //     return redirect('/');
+        // } else {
+        //     return redirect('/login');
+        // }
     }
 }

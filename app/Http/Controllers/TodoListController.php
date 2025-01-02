@@ -16,6 +16,12 @@ class TodoListController extends Controller
 
     public function index(Request $request)
     {
+        // if($request->session()->exists('user')) {
+        //     return redirect('/');
+        // } else {
+        //     return redirect('/login');
+        // }
+
         $todoList = $this->todolistService->getTodoList();
         return view('todolist.todo', compact('todoList'));
     }
