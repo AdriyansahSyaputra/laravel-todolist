@@ -18,7 +18,7 @@ class OnlyMemberMiddleware
         if ($request->session()->exists('user')) {
             return $next($request);
         } else {
-            return redirect('/');
+            return redirect('/login');
         }
     }
 }

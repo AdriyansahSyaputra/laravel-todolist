@@ -51,7 +51,7 @@
                 <div
                     class="bg-white rounded-lg shadow-md p-4 flex items-center justify-between gap-4 transition-all duration-300 hover:shadow-lg">
                     <div class="flex items-center gap-4 flex-1">
-                        <span>{{ $todo['id'] }}</span>
+                        <span>#{{ $todo['id'] }}</span>
                         <span class="text-gray-800 font-semibold">
                             {{ $todo['todo'] }}
                         </span>

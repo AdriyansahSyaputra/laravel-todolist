@@ -1,18 +1,14 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TodoListController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Middleware\OnlyGuestMiddleware;
-use App\Http\Middleware\OnlyMemberMiddleware;
 
-// Route::get('/', [HomeController::class, 'home']);
 
 Route::controller(UserController::class)->group(function () {
-    Route::get('/login', 'login');
-    Route::post('/login', 'doLogin');
-    Route::post('/logout', 'doLogout');
+    Route::get('/login', 'login')->middleware('onlyGuest');
+    Route::post('/login', 'doLogin')->middleware('onlyGuest');
+    Route::post('/logout', 'doLogout')->middleware('onlyMember');
 });
 
 Route::controller(TodoListController::class)

@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\UserService;
+use Illuminate\Http\Response;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Response;
+
 
 class UserController extends Controller
 {
