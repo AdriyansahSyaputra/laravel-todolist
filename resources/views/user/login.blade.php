@@ -15,12 +15,12 @@
         <!-- Form Login -->
         <form action="/login" method="POST" class="space-y-4">
             @csrf
-            <!-- Username -->
+            <!-- email -->
             <div>
-                <label for="username" class="block text-gray-700 font-medium">Username</label>
-                <input type="username" id="username" name="username"
+                <label for="email" class="block text-gray-700 font-medium">Email</label>
+                <input type="email" id="email" name="email"
                     class="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Masukkan username" required>
+                    placeholder="Masukkan email" required>
             </div>
 
             <!-- Password -->

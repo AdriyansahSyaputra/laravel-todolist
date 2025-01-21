@@ -26,11 +26,11 @@ class UserController extends Controller
     {
         // Validasi input
         $validatedData = $request->validate([
-            'username' => 'required|string',
+            'email' => 'required|string',
             'password' => 'required|string',
         ]);
 
-        $user = $validatedData['username'];
+        $user = $validatedData['email'];
         $pass = $validatedData['password'];
 
         if ($this->userService->login($user, $pass)) {
@@ -39,7 +39,7 @@ class UserController extends Controller
             return redirect('/');
         }
 
-        return redirect('/login')->with('error', 'Username atau password salah');
+        return redirect('/login')->with('error', 'email atau password salah');
     }
 
     public function doLogout(Request $request) {
